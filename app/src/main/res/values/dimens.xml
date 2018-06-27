@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="item_margin">8dp</dimen>
+
+    <dimen name="item_margin_double">24dp</dimen>
+    <dimen name="button_padding">4dp</dimen>
+
+    <dimen name="image_size">200dp</dimen>
+    <dimen name="text_size">10sp</dimen>
+
+    <dimen name="user_text_size">20sp</dimen>
+</resources>

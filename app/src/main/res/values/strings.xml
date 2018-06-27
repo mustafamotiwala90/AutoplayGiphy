@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TinderGiphy</string>
+    <string name="image_name">Gif Image</string>
+
+    <string name="detail_activity">Gif Detail activity</string>
+
+    <string name="user_posted_by">Posted by : </string>
+</resources>
