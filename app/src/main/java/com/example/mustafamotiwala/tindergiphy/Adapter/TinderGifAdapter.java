@@ -17,14 +17,11 @@ import java.util.List;
 public class TinderGifAdapter extends RecyclerView.Adapter<TinderGifViewHolder> {
 
     private List<TinderGif> _gifFeed;
-    private Context _context;
-    final float _scale;
-    private int previousStart = 0;
+    private float _scale;
+    private int previousStart;
 
-    public TinderGifAdapter(List<TinderGif> items, Context context) {
+    public TinderGifAdapter(List<TinderGif> items) {
         _gifFeed = items;
-        _context = context;
-        _scale = _context.getResources().getDisplayMetrics().density;
         previousStart = items.size();
     }
 
@@ -32,6 +29,7 @@ public class TinderGifAdapter extends RecyclerView.Adapter<TinderGifViewHolder> 
     @Override
     public TinderGifViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_gif_view, parent, false);
+        _scale = parent.getContext().getResources().getDisplayMetrics().density;
         return new TinderGifViewHolder(view);
     }
 
@@ -40,7 +38,7 @@ public class TinderGifAdapter extends RecyclerView.Adapter<TinderGifViewHolder> 
         TinderGif gif = _gifFeed.get(position);
         String imageUrl = gif.getImages().getFixedHeightDownsampled().getUrl();
         setImageDimensions(holder, gif);
-        holder.setImageGifUrl(_context, imageUrl);
+        holder.setImageGifUrl(imageUrl);
         holder.getTextView().setText(gif.getTitle());
     }
 

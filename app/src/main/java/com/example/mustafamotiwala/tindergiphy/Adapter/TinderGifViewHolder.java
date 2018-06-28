@@ -40,7 +40,7 @@ public class TinderGifViewHolder extends RecyclerView.ViewHolder {
     }
 
     @SuppressLint("CheckResult")
-    public void setImageGifUrl(Context context, String gifUrl) {
+    public void setImageGifUrl(String gifUrl) {
         Glide.with(itemView.getContext())
                 .asGif()
                 .load(gifUrl)
